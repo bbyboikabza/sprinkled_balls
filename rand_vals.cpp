@@ -1,10 +1,10 @@
 #include "rand_vals.hpp"
 
-int rand_cords(){
+int rand_val(int min , int max){
 	static std::random_device rd;
 	static std::mt19937 gen(rd());
 
-	std::uniform_int_distribution<> dist(80, 1000);
+	std::uniform_int_distribution<> dist(min, max);
 	return dist(gen);
 }
 

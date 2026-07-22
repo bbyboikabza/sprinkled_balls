@@ -6,7 +6,7 @@ int main() {
 	const int screen_height = 900;
 	InitWindow(screen_width, screen_height, "spawning balls");
 
-	ball Ball[20];
+	ball Ball[100];
 
     while (!WindowShouldClose()) {
 	    //update something
@@ -15,7 +15,7 @@ int main() {
         BeginDrawing();
         ClearBackground(BLACK);
 
-	for(int index = 0; index<= 20; index++){
+	for(int index = 0; index<= std::size(Ball); index++){
 		Ball[index].draw();
 	}
 
@@ -25,4 +25,5 @@ int main() {
     CloseWindow();
 }
 
-//compile flags g++ main.cpp -o game -lraylib
+//compile flags 
+//g++ *.cpp -o game -lraylib -lm -ldl -lpthread
